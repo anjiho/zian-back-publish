@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 동영상 등록 -->
+    <meta charset="utf-8">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="common/assets/images/favicon.png">
+    
+    <!-- Common CSS -->
+    <link href="common/css/common.css" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="common/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Common CSS -->
+    <link href="common/dist/css/style.min.css" rel="stylesheet">
+    <!-- Steps CSS -->
+    <link href="common/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
+    <link href="common/assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    <!-- datatable CSS -->
+    <link rel="stylesheet" type="text/css" href="common/assets/extra-libs/multicheck/multicheck.css">
+    <link href="common/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    
+    <script src="common/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="common/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="common/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="common/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="common/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="common/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="common/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="common/assets/libs/flot/excanvas.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="common/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="common/dist/js/pages/chart/chart-page-init.js"></script>
+    
+    <script src="common/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!--datatable js-->
+    <script src="common/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="common/assets/extra-libs/DataTables/datatables.min.js"></script>
+    
+     <!-- this page js -->
+    <script src="common/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="common/assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+</head>
+<title>지안에듀관리자</title>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <a class="navbar-brand" href="index.html">
+                    <span class="logo-text">
+                        지안에듀
+                    </span>
+                </a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav float-left mr-auto"></ul>
+                    <ul class="navbar-nav float-right">
+                        <li class="nav-item">
+                            <span class=" nav-link text-muted waves-effect waves-dark pro-pic">지안에듀</span>
+                            <button type="button" class="btn btn-outline-secondary" onclick="goPage('login', 'logout')"><i class="fa fa-power-off m-r-5 m-l-5"></i>  로그아웃</button>
+                            <button type="button" class="btn btn-outline-warning">사이트이동</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30 ">
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">기본관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level vertical-menu ">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 기본정보 </span></a></li>
+                                <li class="sidebar-item"><a href="examSchedule.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 요약정보 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 배송정보 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 배송사설정 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 권한관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 권한관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">데이터관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 카테고리관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'detachSave'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 분류관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'subjectSave'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 과목관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 배너관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'bannerSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">배너관리</span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'sideBannerSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">사이드바배너관리</span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu">빅모의고사배너관리</span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 일정/검색어관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 시험일정관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 검색어관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">상품관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 동영상상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'playList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 동영상 목록 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'playSave'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 동영상 등록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 학원강의 상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu">학원강의 목록</span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu">학원강의 등록</span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 도서관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 도서목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 도서등록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 모의고사관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사등록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 문제은행 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">프로모션상품관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 패키지 상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 패키지목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 패키지등록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 지안패스 상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 지안패스 페이지 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 지안패스 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 연간회원제 상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 연간회원제 페이지관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 연간회원제 관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">주문관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 주문관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 전체주문목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 수강관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 수강내역목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 학원수강 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 무료수강 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 디바이스관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 상품/모바일 디바잉스관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 기기변경 이력조회 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 모의고사 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 오프라인 응시자 목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 성적내역 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> OMR </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 기타관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 마일리지관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">팝업/쿠폰관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 팝업관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 팝업관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 쿠폰관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 쿠폰관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">회원관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 회원관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 회원관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 탈퇴회원관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 상담내역 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 강사/노출순서 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 강사관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 순서관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> SMS보내기 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 푸시관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">게시판관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 게시판관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 게시판관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 내강의실 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 복습동영상신청 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 행정직 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 커뮤니티 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 공지사항 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 기술직 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 커뮤니티 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 공지사항 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 계리직 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 학습질문하기 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 시험정보 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 커뮤니티 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 공지사항 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 온라인서점 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 커뮤니티 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 고객센터 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 고객센터 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 교수소개 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 공지사항 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">통계</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 매출통계 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 상품통계 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 회원통계 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">교수</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 정산내역 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 통계 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 게시글관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 학습자료실 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> Q&A </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 리뷰 </span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        
+        
+        <div class="page-wrapper">
+            <!--순서-->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">동영상 등록</h4>
+                        <div class="ml-auto text-right">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">상품관리</li>
+                                    <li class="breadcrumb-item active" aria-current="page">동영상상품관리</li>
+                                    <li class="breadcrumb-item active" aria-current="page">동영상 등록</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//순서-->
+
+            <!-- 기본 소스-->
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-body wizard-content">
+                        <h4 class="card-title"></h4>
+                        <h6 class="card-subtitle"></h6>
+                        <form id="frm" naem="frm" method="" action="" class="m-t-40">
+                            <div>
+                                <!-- 1.기본정보 Tab -->
+                                <h3>기본정보</h3>
+                                <section class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">상품타입</label>
+                                        <input type="text" class="bg-light required form-control" value="온라인강좌" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lname" class="control-label col-form-label" style="margin-bottom: 0">이름</label>
+                                        <input type="text" class="form-control" id="lname">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">등록일</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control mydatepicker" placeholder="yyyy.mm.dd">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">판매시작일</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mt-4" style="">
+                                        <label class="col-sm-2 text-left control-label col-form-label">노출</label>
+                                        <div class="col-sm-10">
+                                            <div style="margin-top: -23px;">
+                                                OFF
+                                                <label class="switch">
+                                                    <input type="checkbox" />
+                                                    <span class="slider"></span>
+                                                </label>
+                                                ON
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 text-left control-label col-form-label">판매</label>
+                                        <div class="col-sm-10">
+                                            <div style="margin-top: -23px;">
+                                                OFF
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                                ON
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 text-left control-label col-form-label">무료</label>
+                                        <div class="col-sm-10">
+                                            <div style="margin-top: -23px;">
+                                                OFF
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                                ON
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">리스트이미지</label>
+                                        <div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">상세이미지</label>
+                                        <div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  class="control-label col-form-label" style="margin-bottom: 0">강조표시</label>
+                                        <div>
+                                            <select class="col-sm-6 select2 form-control custom-select">
+                                                <option>없음</option>
+                                                <option value="best">BEST</option>
+                                                <option value="new">NEW</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label">사은품 배송비 무료</label>
+                                        <div>
+                                            <div style="margin-top: -23px;">
+                                                OFF
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                                ON
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- // 1.기본정보 Tab -->
+                                
+                                <!-- 2.옵션 Tab -->
+                                <h3>옵션</h3>
+                                <section>
+                                    <table class="table">
+                                    <thead>
+                                        <tr style="border-top:0">
+                                            <th scope="col" style="text-align:center;width:30%">옵션명</th>
+                                            <th scope="col" style="text-align:center;">원가</th>
+                                            <th scope="col" style="text-align:center;">판매가</th>
+                                            <th scope="col" style="text-align:center;">포인트</th>
+                                            <th scope="col" colspan="2" style="text-align:center;">재수강</th>
+                                            <th scope="col" style="text-align:center;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding: 0.3rem;text-align: center;">
+                                                <select class="select2 form-control custom-select" style="height:36px;">
+                                                    <option>선택</option>
+                                                    <option value="V">VOD</option>
+                                                    <option value="M">MOBILE</option>
+                                                    <option value="VM">VOD+MOBILE</option>
+                                                </select>
+                                            </td>
+                                            <td style="padding: 0.3rem;">
+                                                <input type="text" class="form-control">
+                                            </td>
+                                            <td style="padding: 0.3rem;">
+                                                <input type="text" class="form-control">
+                                            </td>
+                                            <td style="padding: 0.3rem;">
+                                                <input type="text" class="form-control">
+                                            </td>
+                                            <td style="padding: 0.3rem;">
+                                                <input type="text" style="display: inline-block" class="form-control">
+                                            </td>
+                                            <td style="padding: 0.3rem;">
+                                                <input type="text" class="form-control">
+                                            </td>
+                                            <td>
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="삭제">
+                                                    <i class="mdi mdi-close"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="mx-auto" style="width:5.5%">
+                                    <button type="button" class="btn btn-outline-info mx-auto">추가</button>
+                                </div>
+                                </section>
+                                <!-- //2.옵션 Tab -->
+                                
+                                <!-- 3.카테고리 목록 Tab -->
+                                <h3>카테고리</h3>
+                                <section>
+                                    <div class="form-group">
+                                        <label  class="control-label col-form-label" style="margin-bottom: 0">카테고리</label>
+                                        <div>
+                                            <select class="col-sm-2 select2 form-control custom-select">
+                                                <option>선택</option>
+                                                <option value="#">Gate Page</option>
+                                                <option value="#">행정직 학원</option>
+                                                <option value="#">행정직 동영상</option>
+                                                <option value="#">기술직 학원</option>
+                                                <option value="#">기술직 동영상</option>
+                                                <option value="#">계리직 학원</option>
+                                                <option value="#">계리직 동영상</option>
+                                                <option value="#">온라인서점</option>
+                                                <option value="#">Public</option>
+                                                <option value="#">빅모의고사</option>
+                                            </select>
+                                            <i class="m-r-10 mdi mdi-chevron-right" style="color:darkblue;vertical-align: middle;font-size:28px;"></i>
+                                            <select class="col-sm-2 select2 form-control custom-select">
+                                                <option>선택</option>
+                                                <option value="#">UI</option>
+                                                <option value="#">메뉴</option>
+                                                <option value="#">사이드바</option>
+                                            </select>
+                                            <i class="m-r-10 mdi mdi-chevron-right" style="vertical-align: middle;font-size:28px;"></i>
+                                            <select class="col-sm-3 select2 form-control custom-select">
+                                                <option>선택</option>
+                                                <option value="#">상단배너</option>
+                                                <option value="#">중앙 대 배너</option>
+                                                <option value="#">중앙 소 배너</option>
+                                                <option value="#">지안교수진</option>
+                                                <option value="#">학원 인기 강좌</option>
+                                                <option value="#">동영상 인기 강좌</option>
+                                                <option value="#">패키지 강좌</option>
+                                                <option value="#">온라인 서점</option>
+                                                <option value="#">이벤트 소식</option>
+                                            </select>
+                                            <i class="m-r-10 mdi mdi-chevron-right" style="vertical-align: middle;font-size:28px;"></i>
+                                            <select class="col-sm-3 select2 form-control custom-select">
+                                                <option>선택</option>
+                                                <option value="best">BEST</option>
+                                                <option value="new">NEW</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- //3.카테고리 목록 Tab -->
+                                
+                                <!-- 4.강좌 정보 Tab -->
+                                <h3>강좌정보</h3>
+                                <section>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">강좌 CODE</label>
+                                        <span class="required form-control">0</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lname" class="col-sm-1 control-label col-form-label" style="margin-bottom: 0">급수</label>
+                                        <button type="button" class="btn btn-primary">급수설정</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-1 control-label col-form-label" style="margin-bottom: 0">과목</label>
+                                        <button type="button" class="btn btn-primary">과목설정</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class=" col-sm-1 control-label col-form-label" style="margin-bottom: 0">유형</label>
+                                        <button type="button" class="btn btn-primary">유형설정</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label  class="control-label col-form-label" style="margin-bottom: 0">진행상태</label>
+                                        <div>
+                                            <select class="col-sm-6 select2 form-control custom-select">
+                                                <option>준비중</option>
+                                                <option value="#">진행중</option>
+                                                <option value="#">완강</option>
+                                                <option value="#">폐강</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">강좌수</label>
+                                        <input type="text" class="col-sm-6 form-control" id="" maxlength="4" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">수강일수</label>
+                                        <input type="text" class="col-sm-6 form-control" id="" maxlength="4" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">강좌시간</label>
+                                        <input type="text" class="col-sm-6 form-control" id="" maxlength="4" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-form-label" style="margin-bottom: 0">배수 <span style="font-size:11px;vertical-align:middle;color:#999;font-weight:500;margin-left:10px">*배수가 0이면 무제한</span></label>
+                                        <input type="number" class="col-sm-6 form-control" id="" placeholder="2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label  class="control-label col-form-label" style="margin-bottom: 0">진행상태</label>
+                                        <div>
+                                            <select class="col-sm-6 select2 form-control custom-select">
+                                                <option>준비중</option>
+                                                <option value="#">2010</option>
+                                                <option value="#">2011</option>
+                                                <option value="#">2012</option>
+                                                <option value="#">2013</option>
+                                                <option value="#">2014</option>
+                                                <option value="#">2015</option>
+                                                <option value="#">2016</option>
+                                                <option value="#">2017</option>
+                                                <option value="#">2018</option>
+                                                <option value="#">2019</option>
+                                                <option value="#">2020</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- //4.강좌 정보 Tab -->
+                                
+                                <!-- 5.강사 목록 Tab -->
+                                <h3>강사목록</h3>
+                                <section>
+                                    <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" colspan="5" style="text-align:center;width:30%">강사목록</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding: 0.3rem;text-align: center;width: 20%;vertical-align: middle">
+                                                <select class="select2 form-control custom-select" style="height:36px;">
+                                                    <option>선택</option>
+                                                    <option value="V">VOD</option>
+                                                    <option value="M">MOBILE</option>
+                                                    <option value="VM">VOD+MOBILE</option>
+                                                </select>
+                                            </td>
+                                            <td style="padding: 0.3rem; vertical-align: middle;width:2%;text-align: center;">
+                                                <i class="m-r-10 mdi mdi-play" style="font-size:18px;color:darkblue"></i>
+                                            </td>
+                                            <td style="padding: 0.3rem;width: 20%">
+                                                <select class="select2 form-control custom-select" style="height:36px;">
+                                                    <option>선택</option>
+                                                    <option value="V">VOD</option>
+                                                    <option value="M">MOBILE</option>
+                                                    <option value="VM">VOD+MOBILE</option>
+                                                </select>
+                                            </td>
+                                            <td style="padding: 0.3rem;width:60%;text-align:right;vertical-align: middle">
+                                                <label style="display: inline-block">조건 : </label>
+                                                <input type="text" class="form-control" style="display: inline-block;width:60%"> %
+                                            </td>
+                                            <td style="width:3%;vertical-align: middle">
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="삭제">
+                                                    <i class="mdi mdi-close"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="mx-auto" style="width:5.5%">
+                                    <button type="button" class="btn btn-outline-info mx-auto">추가</button>
+                                </div>
+                                </section>
+                                <!-- //5.강사 목록 Tab -->
+                                
+                                <!-- 6.선택 Tab -->
+                                <h3>선택</h3>
+                                <section>
+                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required">
+                                    <label for="acceptTerms">I agree with the Terms and Conditions.</label>
+                                </section>
+                                <!-- //6.선택 Tab -->
+                                
+                                <!-- 7.강의 목록 Tab -->
+                                <h3>강의목록</h3>
+                                <section>
+                                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required">
+                                    <label for="acceptTerms">I agree with the Terms and Conditions.</label>
+                                </section>
+                                <!-- //7.강의 목록 Tab -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- //div.card -->
+            </div>
+            <!-- // 기본소스-->
+
+            <!-- 시험일정 추가 팝업창 -->
+            <div class="modal fade" id="sModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">텍스트 입력</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- modal body -->
+                        <div class="modal-body">
+                            <div class="form-group row">
+                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">텍스트</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="scode">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-info float-right">확인</button>
+                        </div>
+                        <!-- //modal body -->
+                    </div>
+                </div>
+            </div>
+            <!-- //시험일정 추가 팝업창 -->
+            
+            <script type="text/javascript">
+                // tab html&css basic
+            var form = $("#frm");
+            form.children("div").steps({
+                headerTag: "h3",
+                bodyTag: "section",
+                transitionEffect: "slideLeft",
+               /* onStepChanging: function(event, currentIndex, newIndex) {
+                    form.validate().settings.ignore = ":disabled,:hidden";
+                    return form.valid();
+                },
+                onFinishing: function(event, currentIndex) {
+                    form.validate().settings.ignore = ":disabled";
+                    return form.valid();
+                },
+                onFinished: function(event, currentIndex) {
+                    alert("Submitted!");
+                }*/
+            });
+                // 달력
+            $('.mydatepicker').datepicker();
+            $('#datepicker-autoclose').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            });
+            
+            var quill = new Quill('#editor', {
+                theme: 'snow'
+            });
+            </script>
+            
+        </div>
+        <!--page wapper-->
+
+    </div>
+    <!--main wapper-->
+</body>
+</html>
+
+
+
+
+
