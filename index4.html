@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 배너관리 -->
+    <meta charset="utf-8">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="common/assets/images/favicon.png">
+    
+    <!-- Common CSS -->
+    <link href="common/css/common.css" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="common/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Common CSS -->
+    <link href="common/dist/css/style.min.css" rel="stylesheet">
+    <!-- Steps CSS -->
+    <link href="common/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
+    <link href="common/assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    <!-- datatable CSS -->
+    <link rel="stylesheet" type="text/css" href="common/assets/extra-libs/multicheck/multicheck.css">
+    <link href="common/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    
+    <script src="common/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="common/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="common/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="common/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="common/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="common/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="common/dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="common/assets/libs/flot/excanvas.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="common/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="common/dist/js/pages/chart/chart-page-init.js"></script>
+    
+    <script src="common/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!--datatable js-->
+    <script src="common/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="common/assets/extra-libs/DataTables/datatables.min.js"></script>
+    
+     <!-- this page js -->
+    <script src="common/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="common/assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+</head>
+<title>지안에듀관리자</title>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <a class="navbar-brand" href="index.html">
+                    <span class="logo-text">
+                        지안에듀
+                    </span>
+                </a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav float-left mr-auto"></ul>
+                    <ul class="navbar-nav float-right">
+                        <li class="nav-item">
+                            <span class=" nav-link text-muted waves-effect waves-dark pro-pic">지안에듀</span>
+                            <button type="button" class="btn btn-outline-secondary" onclick="goPage('login', 'logout')"><i class="fa fa-power-off m-r-5 m-l-5"></i>  로그아웃</button>
+                            <button type="button" class="btn btn-outline-warning">사이트이동</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30 ">
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">기본관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level vertical-menu ">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 기본정보 </span></a></li>
+                                <li class="sidebar-item"><a href="examSchedule.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 요약정보 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 배송정보 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 배송사설정 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 권한관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 권한관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">데이터관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 카테고리관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'detachSave'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 분류관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'subjectSave'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 과목관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 배너관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'bannerSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">배너관리</span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'sideBannerSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">사이드바배너관리</span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu">빅모의고사배너관리</span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 일정/검색어관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 시험일정관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 검색어관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">상품관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 동영상상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'playList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 동영상 목록 </span></a></li>
+                                <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'playSave'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 동영상 등록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 학원강의 상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu">학원강의 목록</span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu">학원강의 등록</span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 도서관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 도서목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 도서등록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 모의고사관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사등록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 문제은행 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">프로모션상품관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 패키지 상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 패키지목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 패키지등록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 지안패스 상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 지안패스 페이지 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 지안패스 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 연간회원제 상품관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 연간회원제 페이지관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 연간회원제 관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">주문관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 주문관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 전체주문목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 수강관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 수강내역목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 학원수강 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 무료수강 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 디바이스관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 상품/모바일 디바잉스관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 기기변경 이력조회 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 모의고사 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 오프라인 응시자 목록 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 성적내역 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> OMR </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 기타관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 마일리지관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">팝업/쿠폰관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 팝업관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 팝업관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 쿠폰관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 쿠폰관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">회원관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 회원관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 회원관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 탈퇴회원관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 상담내역 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 강사/노출순서 관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 강사관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 순서관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> SMS보내기 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 푸시관리 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">게시판관리</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 게시판관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 게시판관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 내강의실 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 복습동영상신청 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 행정직 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 커뮤니티 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 공지사항 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 기술직 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 커뮤니티 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 공지사항 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 계리직 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 학습질문하기 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 시험정보 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 커뮤니티 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 공지사항 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 온라인서점 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 커뮤니티 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 고객센터 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 고객센터 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 교수소개 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 공지사항 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">통계</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 매출통계 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 상품통계 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 회원통계 </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">교수</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 정산내역 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-material.html" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 통계 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 게시글관리 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 학습자료실 </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> Q&A </span></a></li>
+                                <li class="sidebar-item"><a href="icon-fontawesome.html" class="sidebar-link"><i class=""></i><span class="hide-menu"> 리뷰 </span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        
+        
+        <div class="page-wrapper">
+            <!--순서-->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">동영상 등록</h4>
+                        <div class="ml-auto text-right">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">상품관리</li>
+                                    <li class="breadcrumb-item active" aria-current="page">동영상상품관리</li>
+                                    <li class="breadcrumb-item active" aria-current="page">동영상 등록</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//순서-->
+            
+            <!-- 기본 소스-->
+            <div class="container-fluid">
+                <div class="form-group">
+                    <div class="row col-md-6">
+                        <label class="text-left control-label col-form-label">서브도메인</label>
+                        <div class="col-sm-5">
+                            <select id="sel_subDomain" class="form-control" onchange="changeBox2(this.value);">
+                                <option value="#">행정직학원</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="bannerName">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row" style="display: block;overflow: hidden">
+                                <label class="text-right control-label col-form-label ml-3 font-weight-bold">상단 대 베너</label>
+                                <button type="button" onclick="popup_save(0,786,0)" class="row btn btn-info btn-sm" style="float: right;margin-right: 1.25rem">추가</button> 
+                                <button type="button" class="btn btn-outline-info btn-sm float-right mr-3 mb-3" onclick="changeBannerList(0);">순서변경저장</button>
+                            </div>
+                            <div id="786">
+                                
+                                <table class="table" id="dragtable_0" cellspacing="0" cellpadding="2">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">타이틀</th>
+                                            <th width="25%">이미지</th>
+                                            <th width="10%">배경이미지</th>
+                                            <th width="10%">배경색상</th>
+                                            <th width="10%">새창열기</th>
+                                            <th width="25%">링크URL</th>
+                                            <th width="10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="dataList0" class="ui-sortable">
+                                        <tr id="1517" class="ui-state-default even ui-sortable-handle">
+                                            <td>행정직 600지안패스1</td>
+                                            <td>100/main/jv11008084_20190411055542.jpg</td>
+                                            <td>-</td>
+                                            <td>BE0000</td>
+                                            <td style="color:#0e6ad3">O</td>
+                                            <td>http://publicvod.zianedu.com/front/FreePass?mnk=69851</td>
+                                            <td>
+                                                <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
+                                            </td>
+                                        </tr>
+                                        <tr id="1146" class="ui-state-default even ui-sortable-handle">
+                                            <td>빅모의고사</td>
+                                            <td>100\main\빅모의고사 서브배너.jpg</td>
+                                            <td>-</td>
+                                            <td>1D124E</td>
+                                            <td style="color:#0e6ad3">O</td>
+                                            <td>http://www.zianedu.com/tt/n_con/bigmo/bigmo_render.html</td>
+                                            <td>
+                                                <button type="button" onclick="popup(1146,786,2)" class="btn btn-outline-success btn-sm">수정</button>
+                                                <button type="button" onclick="bannerDelete(1146,786,2)" class="btn btn-outline-danger btn-sm">삭제</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row" style="display: block;overflow: hidden">
+                                <label class="text-right control-label col-form-label ml-3 font-weight-bold">상단 소 배너</label>
+                                <button type="button" onclick="popup_save(0,786,0)" class="row btn btn-info btn-sm" style="float: right;margin-right: 1.25rem">추가</button> 
+                                <button type="button" class="btn btn-outline-info btn-sm float-right mr-3 mb-3" onclick="changeBannerList(0);">순서변경저장</button>
+                            </div>
+                            <div id="788">
+                                <table class="table" id="dragtable_2" cellspacing="0" cellpadding="2" style="box-sizing:border-box">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">타이틀</th>
+                                            <th width="25%">이미지</th>
+                                            <th width="10%">배경이미지</th>
+                                            <th width="10%">배경색상</th>
+                                            <th width="10%">새창열기</th>
+                                            <th width="25%">링크URL</th>
+                                            <th width="10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="dataList2" class="ui-sortable">
+                                        <tr id="199" class="ui-state-default even ui-sortable-handle">
+                                            <td>테스트테스트테스트테스트테스트</td>
+                                            <td>testtestetstet/tse/testsetete.jpg</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td style="color:#e90000">X</td>
+                                            <td>http://public.zianedu.com/front/TeacherViewMain?mnk=109&amp;parent_mnk=353</td>
+                                            <td>
+                                                <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
+                                            </td>
+                                        </tr>
+                                        <tr id="1276" class="ui-state-default even ui-sortable-handle">
+                                            <td>테스트</td>
+                                            <td>test/test/test/etst/setset.jpg</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td style="color:#e90000">X</td>
+                                            <td>http://public.zianedu.com/front/TeacherViewMain?mnk=120&amp;parent_mnk=353</td>
+                                            <td>
+                                                <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row" style="display: block;overflow: hidden">
+                                <label class="text-right control-label col-form-label ml-3 font-weight-bold">지안교수진</label>
+                                <button type="button" onclick="popup_save(0,786,0)" class="row btn btn-info btn-sm" style="float: right;margin-right: 1.25rem">추가</button> 
+                                <button type="button" class="btn btn-outline-info btn-sm float-right mr-3 mb-3" onclick="changeBannerList(0);">순서변경저장</button>
+                            </div>
+                            <div id="788">
+                                <table class="table" id="dragtable_2" cellspacing="0" cellpadding="2" style="box-sizing:border-box">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">타이틀</th>
+                                            <th width="25%">이미지</th>
+                                            <th width="10%">배경이미지</th>
+                                            <th width="10%">배경색상</th>
+                                            <th width="10%">새창열기</th>
+                                            <th width="25%">링크URL</th>
+                                            <th width="10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="dataList2" class="ui-sortable">
+                                        <tr id="199" class="ui-state-default even ui-sortable-handle">
+                                            <td>[국어]오선희</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td style="color:#e90000">X</td>
+                                            <td>http://public.zianedu.com/front/TeacherViewMain?mnk=109&amp;parent_mnk=353</td>
+                                            <td>
+                                                <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
+                                            </td>
+                                        </tr>
+                                        <tr id="1276" class="ui-state-default even ui-sortable-handle">
+                                            <td>[국어]안효선</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td style="color:#e90000">X</td>
+                                            <td>http://public.zianedu.com/front/TeacherViewMain?mnk=120&amp;parent_mnk=353</td>
+                                            <td>
+                                                <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row" style="display: block;overflow: hidden">
+                                <label class="text-right control-label col-form-label ml-3 font-weight-bold">중앙 소 베너</label>
+                                <button type="button" onclick="popup_save(0,786,0)" class="row btn btn-info btn-sm" style="float: right;margin-right: 1.25rem">추가</button> 
+                                <button type="button" class="btn btn-outline-info btn-sm float-right mr-3 mb-3" onclick="changeBannerList(0);">순서변경저장</button>
+                            </div>
+                            <div id="789">
+                                <table class="table" id="dragtable_3" cellspacing="0" cellpadding="2">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">타이틀</th>
+                                            <th width="25%">이미지</th>
+                                            <th width="10%">배경이미지</th>
+                                            <th width="10%">배경색상</th>
+                                            <th width="10%">새창열기</th>
+                                            <th width="25%">링크URL</th>
+                                            <th width="10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="dataList3" class="ui-sortable">
+                                        <tr id="79" class="ui-state-default even ui-sortable-handle">
+                                            <td>모바일수강방법</td>
+                                            <td>100\main\중단서브배너01.png</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td style="color:#e90000">X</td>
+                                            <td>http://publicvod.zianedu.com/front/Notice?mnk=259&amp;nvt=1&amp;bbsmasterkey=10009&amp;lBBSKey=17988</td>
+                                            <td>
+                                               <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
+                                            </td>
+                                        </tr>
+                                        <tr id="80" class="ui-state-default even ui-sortable-handle">
+                                            <td>이니시스가맹할인</td>
+                                            <td>100\main\중단서브배너02.png</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td style="color:#e90000">X</td>
+                                            <td>http://www.inicis.com/blog/archives/16302</td>
+                                            <td>
+                                                <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row" style="display: block;overflow: hidden">
+                                <label class="text-right control-label col-form-label ml-3 font-weight-bold">이벤트 소식</label>
+                                <button type="button" onclick="popup_save(0,786,0)" class="row btn btn-info btn-sm" style="float: right;margin-right: 1.25rem">추가</button> 
+                                <button type="button" class="btn btn-outline-info btn-sm float-right mr-3 mb-3">순서변경저장</button>
+                            </div>
+                            <div id="6285">
+                                <table class="table" id="dragtable_4" cellspacing="0" cellpadding="2">
+                                    <thead>
+                                        <tr>
+                                            <th width="10%">타이틀</th>
+                                            <th width="25%">이미지</th>
+                                            <th width="10%">배경이미지</th>
+                                            <th width="10%">배경색상</th>
+                                            <th width="10%">새창열기</th>
+                                            <th width="25%">링크URL</th>
+                                            <th width="10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="dataList4" class="ui-sortable">
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <!-- The Modal -->
+<!--                <div id="myModal" class="modal1">
+                    <input type="hidden" id="bannerKey" value="">
+                    <input type="hidden" id="pos" value="">
+                    <input type="hidden" id="ctgKey" value=""> -->
+                    <!-- Modal content -->
+<!--                    <div class="modal-content1">
+                        <div class="form-group row">
+                            <label class="text-right control-label col-form-label">타이틀</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="title">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="text-right control-label col-form-label">이미지</label>
+                            <div class="col-sm-9">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="attachFile" onchange="getThumbnailPrivew(this,$(&#39;#cma_image&#39;))" required="">
+                                    <span class="custom-file-control custom-file-label"></span>
+                                     <div id="cma_image" style="width:30%;max-width:30%;border:1px solid #000;display:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="text-right control-label col-form-label">배경색상</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="bannerColor">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="text-right control-label col-form-label">새창열기</label>
+                            <div class="col-sm-9">
+                                <div style="margin-top: -23px;">
+                                    OFF
+                                    <label class="switch">
+                                        <input type="checkbox" id="newPopYn" name="newPopYn">
+                                        <span class="slider"></span>
+                                    </label>
+                                    ON
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="text-right control-label col-form-label">링크url</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="bannerLink">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <button type="button" class="btn btn-info" onclick="modify()">저장</button>
+                            <button type="button" class="btn btn-info" onclick="close_pop();">닫기</button>
+                        </div>
+                    </div>
+                </div>-->
+            </div> 
+            <!-- // 기본소스-->
+        </div>
+        <!--page wapper-->
+
+    </div>
+    <!--main wapper-->
+</body>
+</html>
+
+
+
+
+
