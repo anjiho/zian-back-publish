@@ -268,118 +268,121 @@
                             <div>
                                 <!-- 1.기본정보 Tab -->
                                 <h3>기본정보</h3>
-                                <section class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label" style="margin-bottom: 0">상품타입</label>
-                                        <input type="text" class="bg-light required form-control" value="온라인강좌" readonly>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="lname" class="control-label col-form-label" style="margin-bottom: 0">이름</label>
-                                        <input type="text" class="form-control" id="lname">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label" style="margin-bottom: 0">등록일</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control mydatepicker" placeholder="yyyy.mm.dd">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                <section>
+                                    <button type="button" class="btn btn-outline-primary btn-sm float-right" data-toggle="modal" data-target="#sModal3">수정</button>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">상품타입</label>
+                                            <input type="text" class="col-sm-6 bg-light required form-control" value="온라인강좌" readonly>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="lname" class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">이름</label>
+                                            <input type="text" class="col-sm-6 form-control" id="lname">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">등록일</label>
+                                            <div class="col-sm-6 input-group pl-0 pr-0">
+                                                <input type="text" class="form-control mydatepicker" placeholder="yyyy.mm.dd">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label" style="margin-bottom: 0">판매시작일</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">판매시작일</label>
+                                            <div class="col-sm-6 input-group pl-0 pr-0">
+                                                <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group row mt-4" style="">
-                                        <label class="col-sm-2 text-left control-label col-form-label">노출</label>
-                                        <div class="col-sm-10">
-                                            <div style="margin-top: -23px;">
-                                                OFF
-                                                <label class="switch">
-                                                    <input type="checkbox" />
-                                                    <span class="slider"></span>
-                                                </label>
-                                                ON
+                                        <div class="form-group row mt-4" style="">
+                                            <label class="col-sm-2 text-left control-label col-form-label">노출</label>
+                                            <div class="col-sm-10">
+                                                <div style="margin-top: -23px;">
+                                                    OFF
+                                                    <label class="switch">
+                                                        <input type="checkbox" />
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                    ON
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 text-left control-label col-form-label">판매</label>
-                                        <div class="col-sm-10">
-                                            <div style="margin-top: -23px;">
-                                                OFF
-                                                <label class="switch">
-                                                    <input type="checkbox">
-                                                    <span class="slider"></span>
-                                                </label>
-                                                ON
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 text-left control-label col-form-label">판매</label>
+                                            <div class="col-sm-10">
+                                                <div style="margin-top: -23px;">
+                                                    OFF
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                    ON
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 text-left control-label col-form-label">무료</label>
-                                        <div class="col-sm-10">
-                                            <div style="margin-top: -23px;">
-                                                OFF
-                                                <label class="switch">
-                                                    <input type="checkbox">
-                                                    <span class="slider"></span>
-                                                </label>
-                                                ON
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 text-left control-label col-form-label">무료</label>
+                                            <div class="col-sm-10">
+                                                <div style="margin-top: -23px;">
+                                                    OFF
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                    ON
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label" style="margin-bottom: 0">리스트이미지</label>
-                                        <div>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">리스트이미지</label>
+                                            <div class="col-sm-6 pl-0 pr-0">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label" style="margin-bottom: 0">상세이미지</label>
-                                        <div>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">상세이미지</label>
+                                            <div class="col-sm-6 pl-0 pr-0">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="control-label col-form-label" style="margin-bottom: 0">강조표시</label>
-                                        <div>
-                                            <select class="col-sm-6 select2 form-control custom-select">
-                                                <option>없음</option>
-                                                <option value="best">BEST</option>
-                                                <option value="new">NEW</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label">사은품 배송비 무료</label>
-                                        <div>
-                                            <div style="margin-top: -23px;">
-                                                OFF
-                                                <label class="switch">
-                                                    <input type="checkbox">
-                                                    <span class="slider"></span>
-                                                </label>
-                                                ON
+                                        <div class="form-group row">
+                                            <label  class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">강조표시</label>
+                                            <div class="col-sm-6 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>없음</option>
+                                                    <option value="best">BEST</option>
+                                                    <option value="new">NEW</option>
+                                                </select>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label" style="margin-bottom: 0">상세설명</label>
-                                        <textarea class="form-control" rows="6" id="comment"></textarea>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label">사은품 배송비무료</label>
+                                            <div class="col-sm-10">
+                                                <div style="margin-top: -23px;">
+                                                    OFF
+                                                    <label class="switch">
+                                                        <input type="checkbox">
+                                                        <span class="slider"></span>
+                                                    </label>
+                                                    ON
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">상세설명</label>
+                                            <textarea class="col-sm-10 form-control" rows="6" id="comment"></textarea>
+                                        </div>
                                     </div>
                                 </section>
                                 <!-- // 1.기본정보 Tab -->
@@ -387,15 +390,19 @@
                                 <!-- 2.옵션 Tab -->
                                 <h3>옵션</h3>
                                 <section>
+                                    <div class="float-right mb-3">
+                                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#sModal3">수정</button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
+                                    </div>
                                     <table class="table">
                                     <thead>
                                         <tr style="border-top:0">
-                                            <th scope="col" style="text-align:center;width:30%">옵션명</th>
-                                            <th scope="col" style="text-align:center;">원가</th>
-                                            <th scope="col" style="text-align:center;">판매가</th>
-                                            <th scope="col" style="text-align:center;">포인트</th>
-                                            <th scope="col" colspan="2" style="text-align:center;">재수강</th>
-                                            <th scope="col" style="text-align:center;"></th>
+                                            <th scope="col" style="text-align:center;width:21%">옵션명</th>
+                                            <th scope="col" style="text-align:center;width:13%">원가</th>
+                                            <th scope="col" style="text-align:center;width:13%">판매가</th>
+                                            <th scope="col" style="text-align:center;widht:13%">포인트</th>
+                                            <th scope="col" colspan="2" style="text-align:center;width:35%">재수강</th>
+                                            <th scope="col" style="text-align:center;width:5%"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -417,11 +424,12 @@
                                             <td style="padding: 0.3rem;vertical-align: middle">
                                                 <input type="text" class="form-control">
                                             </td>
-                                            <td style="padding: 0.3rem;vertical-align: middle">
-                                                <input type="text" style="display: inline-block" class="form-control">
+                                            <td style="padding:0.3rem;vertical-align:middle;width:20%">
+                                                <input type="text" class="form-control text-right" style="width:93%;display:inline-block;">
+                                                <span style="display: inline-block;">%</span>
                                             </td>
-                                            <td style="padding: 0.3rem;vertical-align: middle">
-                                                <input type="text" class="form-control">
+                                            <td style="padding: 0.3rem;vertical-align: middle;width:15%">
+                                                <input type="text" class="form-control text-right" readonly>
                                             </td>
                                             <td style="vertical-align: middle">
                                                 <button type="button" class="btn btn-outline-danger btn-sm">삭제</button>
@@ -429,9 +437,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <div class="mx-auto" style="width:5.5%">
-                                    <button type="button" class="btn btn-outline-info mx-auto">추가</button>
-                                </div>
                                 </section>
                                 <!-- //2.옵션 Tab -->
                                 
@@ -439,6 +444,10 @@
                                 <h3>카테고리</h3>
                                 <section>
                                     <div class="form-group">
+                                        <div class="float-right mb-3">
+                                            <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#sModal3">수정</button>
+                                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
+                                        </div>
                                         <label  class="control-label col-form-label" style="margin-bottom: 0">카테고리 목록</label>
                                         <div>
                                             <select class="col-sm-2 select2 form-control custom-select">
@@ -488,87 +497,112 @@
                                 <!-- 4.강좌 정보 Tab -->
                                 <h3>강좌정보</h3>
                                 <section>
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label" style="margin-bottom: 0">강좌 CODE</label>
-                                        <span class="required form-control">0</span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="lname" class="col-sm-1 control-label col-form-label" style="margin-bottom: 0">급수</label>
-                                        <button type="button" class="btn btn-primary">급수설정</button>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-1 control-label col-form-label" style="margin-bottom: 0">과목</label>
-                                        <button type="button" class="btn btn-primary">과목설정</button>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class=" col-sm-1 control-label col-form-label" style="margin-bottom: 0">유형</label>
-                                        <button type="button" class="btn btn-primary">유형설정</button>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="control-label col-form-label" style="margin-bottom: 0">진행상태</label>
-                                        <div>
-                                            <select class="col-sm-6 select2 form-control custom-select">
-                                                <option>준비중</option>
-                                                <option value="#">진행중</option>
-                                                <option value="#">완강</option>
-                                                <option value="#">폐강</option>
-                                            </select>
+                                    <button type="button" class="btn btn-outline-primary btn-sm float-right" data-toggle="modal" data-target="#sModal3">수정</button>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">강좌 CODE</label>
+                                            <input type="text" class="col-sm-4 bg-light required form-control" value="0" readonly>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="control-label col-form-label" style="margin-bottom: 0">강좌수</label>
-                                        <div>
-                                            <select class="col-sm-6 select2 form-control custom-select">
-                                                <option>0</option>
-                                                <option value="#">1</option>
-                                                <option value="#">2</option>
-                                                <option value="#">3</option>
-                                            </select>
+                                        <div class="form-group row">
+                                            <label  class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">급수</label>
+                                            <div class="col-sm-4 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>0</option>
+                                                    <option value="#">1</option>
+                                                    <option value="#">2</option>
+                                                    <option value="#">3</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="control-label col-form-label" style="margin-bottom: 0">수강일수</label>
-                                        <div>
-                                            <select class="col-sm-6 select2 form-control custom-select">
-                                                <option>0</option>
-                                                <option value="#">1</option>
-                                                <option value="#">2</option>
-                                                <option value="#">3</option>
-                                            </select>
+                                        <div class="form-group row">
+                                            <label  class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">과목</label>
+                                            <div class="col-sm-4 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>0</option>
+                                                    <option value="#">1</option>
+                                                    <option value="#">2</option>
+                                                    <option value="#">3</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="control-label col-form-label" style="margin-bottom: 0">강좌시간</label>
-                                        <div>
-                                            <select class="col-sm-6 select2 form-control custom-select">
-                                                <option>0</option>
-                                                <option value="#">1</option>
-                                                <option value="#">2</option>
-                                                <option value="#">3</option>
-                                            </select>
+                                        <div class="form-group row">
+                                            <label  class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">유형</label>
+                                            <div class="col-sm-4 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>0</option>
+                                                    <option value="#">1</option>
+                                                    <option value="#">2</option>
+                                                    <option value="#">3</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-form-label" style="margin-bottom: 0">배수 <span style="font-size:11px;vertical-align:middle;color:#999;font-weight:500;margin-left:10px">*배수가 0이면 무제한</span></label>
-                                        <input type="number" class="col-sm-6 form-control" id="" placeholder="2">
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="control-label col-form-label" style="margin-bottom: 0">시험대비년도</label>
-                                        <div>
-                                            <select class="col-sm-6 select2 form-control custom-select">
-                                                <option>준비중</option>
-                                                <option value="#">2010</option>
-                                                <option value="#">2011</option>
-                                                <option value="#">2012</option>
-                                                <option value="#">2013</option>
-                                                <option value="#">2014</option>
-                                                <option value="#">2015</option>
-                                                <option value="#">2016</option>
-                                                <option value="#">2017</option>
-                                                <option value="#">2018</option>
-                                                <option value="#">2019</option>
-                                                <option value="#">2020</option>
-                                            </select>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">진행상태</label>
+                                            <div class="col-sm-4 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>준비중</option>
+                                                    <option value="#">진행중</option>
+                                                    <option value="#">완강</option>
+                                                    <option value="#">폐강</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">강좌수</label>
+                                            <div class="col-sm-4 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>0</option>
+                                                    <option value="#">1</option>
+                                                    <option value="#">2</option>
+                                                    <option value="#">3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label  class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">수강일수</label>
+                                            <div class="col-sm-4 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>0</option>
+                                                    <option value="#">1</option>
+                                                    <option value="#">2</option>
+                                                    <option value="#">3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label  class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">강좌시간</label>
+                                            <div class="col-sm-4 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>0</option>
+                                                    <option value="#">1</option>
+                                                    <option value="#">2</option>
+                                                    <option value="#">3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">배수</label>
+                                            <input type="number" class="col-sm-4 form-control" id="" placeholder="2">
+                                            <span style="font-size:11px;color:#999;font-weight:500;margin-left:10px;padding-top:10px">*배수가 0이면 무제한</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">시험대비년도</label>
+                                            <div class="col-sm-4 pl-0 pr-0">
+                                                <select class="select2 form-control custom-select">
+                                                    <option>준비중</option>
+                                                    <option value="#">2010</option>
+                                                    <option value="#">2011</option>
+                                                    <option value="#">2012</option>
+                                                    <option value="#">2013</option>
+                                                    <option value="#">2014</option>
+                                                    <option value="#">2015</option>
+                                                    <option value="#">2016</option>
+                                                    <option value="#">2017</option>
+                                                    <option value="#">2018</option>
+                                                    <option value="#">2019</option>
+                                                    <option value="#">2020</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </section>
@@ -577,6 +611,10 @@
                                 <!-- 5.강사 목록 Tab -->
                                 <h3>강사목록</h3>
                                 <section>
+                                    <div class="float-right mb-3">
+                                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#sModal3">수정</button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
+                                    </div>
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -614,19 +652,23 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="mx-auto" style="width:5.5%">
-                                        <button type="button" class="btn btn-outline-info btn-sm">추가</button>
-                                    </div>
                                 </section>
                                 <!-- //5.강사 목록 Tab -->
                                 
                                 <!-- 6.선택 Tab -->
                                 <h3>선택</h3>
                                 <section>
-                                    <table class="table text-center table-hover">
+                                    <div class="float-right mb-3">
+                                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#sModal3">수정</button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
+                                    </div>
+                                    <table class="table text-center table-hover mb-5">
                                         <thead>
                                             <tr>
                                                 <th scope="col" colspan="2">전범위 모의고사</th>
+                                               <!-- <th scope="col">
+                                                    <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
+                                                </th>-->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -634,16 +676,17 @@
                                                 <td class="text-left" style="padding: 0.3rem;vertical-align: middle;width:95%">
                                                     <span>빅주간(전범위)모의고사_공통과목 12회</span>
                                                 </td>
-                                                <td class="text-left" style="padding:0.3rem;vertical-align:middle;">
+                                                <td class="text-center" style="padding:0.3rem;vertical-align:middle;">
                                                     <button type="button" class="btn btn-outline-danger btn-sm">삭제</button>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="mx-auto mb-5" style="width:5.5%">
-                                        <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
+                                    <div class="float-right mb-3">
+                                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#sModal3">수정</button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
                                     </div>
-                                    <table class="table table-hover text-center">
+                                    <table class="table table-hover text-center mb-5">
                                         <thead>
                                             <tr>
                                                 <th scope="col" colspan="2">기출문제 회차별</th>
@@ -660,10 +703,11 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="mx-auto mb-5" style="width:5.5%">
-                                        <button type="button" class="btn btn-outline-info btn-sm">추가</button>
+                                    <div class="float-right mb-3">
+                                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#sModal3">수정</button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
                                     </div>
-                                    <table class="table text-center table-hover">
+                                    <table class="table text-center table-hover mb-5">
                                         <thead>
                                             <tr>
                                                 <th scope="col" colspan="3">강의교재</th>
@@ -690,11 +734,11 @@
                                                     <button type="button" class="btn btn-outline-danger btn-sm">삭제</button>
                                                 </td>
                                             </tr>
-                                            
                                         </tbody>
                                     </table>
-                                    <div class="mx-auto mb-5" style="width:5.5%">
-                                        <button type="button" class="btn btn-outline-info btn-sm">추가</button>
+                                    <div class="float-right mb-3">
+                                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#sModal3">수정</button>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#sModal3">추가</button>
                                     </div>
                                     <table class="table text-center table-hover">
                                         <thead>
@@ -713,9 +757,6 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="mx-auto mb-5" style="width:5.5%">
-                                        <button type="button" class="btn btn-outline-info btn-sm">추가</button>
-                                    </div>
                                 </section>
                                 <!-- //6.선택 Tab -->
                                 
@@ -724,13 +765,13 @@
                                 <section>
                                    <div class="mb-3 float-right">
                                         <button type="button" class="btn btn-outline-info btn-sm">순서변경</button>
+                                        <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#sModal3">수정</button>
                                         <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#sModal4">추가</button>
                                     </div>
                                     <table class="table text-center table-hover">
                                         <thead>
                                             <tr>
-                                                <th scope="col" colspan="1" style="width:8%">번호</th>
-                                                <th scope="col" colspan="1" style="width:50%">강의제목</th>
+                                                <th scope="col" colspan="1" style="width:58%">강의제목</th>
                                                 <th scope="col" colspan="1" style="width:15%">시간</th>
                                                 <th scope="col" colspan="1" style="width:10%">출력</th>
                                                 <th scope="col" colspan="1" style="width:10%">샘플사용</th>
@@ -739,9 +780,6 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="text-center" style="padding: 0.3rem;vertical-align: middle">
-                                                    <span>1</span>
-                                                </td>
                                                 <td class="text-left" style="padding: 0.3rem; vertical-align: middle;">
                                                     <span>text</span>
                                                 </td>
@@ -755,13 +793,11 @@
                                                     <i class="mdi mdi-check" style="color:green;"></i>
                                                 </td>
                                                 <td style="padding: 0.3rem;text-align: center;vertical-align: middle">
-                                                    <button type="button" class="btn btn-outline-danger btn-sm">삭제</button>
+                                                    <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                    <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="text-center" style="padding: 0.3rem;vertical-align: middle">
-                                                    <span>2</span>
-                                                </td>
                                                 <td class="text-left" style="padding: 0.3rem; vertical-align: middle;">
                                                     <span>text</span>
                                                 </td>
@@ -775,7 +811,8 @@
                                                     <i class="mdi mdi-check" style="color:green;"></i>
                                                 </td>
                                                 <td style="padding: 0.3rem;text-align: center;vertical-align: middle">
-                                                    <button type="button" class="btn btn-outline-danger btn-sm">삭제</button>
+                                                    <button type="button" onclick="popup(1517,786,0)" class="btn btn-outline-success btn-sm">수정</button>
+                                                    <button type="button" onclick="bannerDelete(1517,786,0)" class="btn btn-outline-danger btn-sm">삭제</button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -837,7 +874,7 @@
             <!-- //선택 추가 팝업창 -->
             
             <!-- 강의목록 추가 팝업창 -->
-            <div class="modal" id="sModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="sModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document" style="max-width:620px;">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -968,34 +1005,41 @@
             <!-- //강의목록 추가 팝업창 -->
             
             <script type="text/javascript">
-                // tab html&css basic
-            var form = $("#frm");
-            form.children("div").steps({
-                headerTag: "h3",
-                bodyTag: "section",
-                transitionEffect: "slideLeft",
-               /* onStepChanging: function(event, currentIndex, newIndex) {
-                    form.validate().settings.ignore = ":disabled,:hidden";
-                    return form.valid();
-                },
-                onFinishing: function(event, currentIndex) {
-                    form.validate().settings.ignore = ":disabled";
-                    return form.valid();
-                },
-                onFinished: function(event, currentIndex) {
-                    alert("Submitted!");
-                }*/
-            });
+                // Steps HTML & CSS Basic
+                var form = $("#frm");
+                form.children("div").steps({
+                    headerTag: "h3",
+                    bodyTag: "section",
+                    enableAllSteps: true,
+                    startIndex : 0,
+                    saveState : true, //현재 단계 쿠키저장
+                    enablePagination : false,
+                    onFinished: function(event, currentIndex) {
+                        playSave();
+                    },
+                   /* onStepChanging: function(event, currentIndex, newIndex) {
+                        form.validate().settings.ignore = ":disabled,:hidden";
+                        return form.valid();
+                    },
+                    onFinishing: function(event, currentIndex) {
+                        form.validate().settings.ignore = ":disabled";
+                        return form.valid();
+                    },
+                    onFinished: function(event, currentIndex) {
+                        alert("Submitted!");
+                    }*/
+                });
+
                 // 달력
-            $('.mydatepicker').datepicker();
-            $('#datepicker-autoclose').datepicker({
-                autoclose: true,
-                todayHighlight: true
-            });
-            
-            var quill = new Quill('#editor', {
-                theme: 'snow'
-            });
+                $('.mydatepicker').datepicker();
+                $('#datepicker-autoclose').datepicker({
+                    autoclose: true,
+                    todayHighlight: true
+                });
+
+                var quill = new Quill('#editor', {
+                    theme: 'snow'
+                });
             </script>
             
         </div>
