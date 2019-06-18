@@ -1,0 +1,675 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- 공통 함수 JS -->
+    <script src="common/js/common.js"></script>
+    <script src="common/js/comPage.js"></script>
+    <script src="common/js/selectbox.js"></script>
+    <script src="common/js/checkbox.js"></script>
+
+    <script type='text/javascript' src='/dwr/engine.js'></script>
+    <script type='text/javascript' src='/dwr/util.js'></script>
+
+    <!--Common css-->
+    <link href="common/css/common.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Favicon icon -->
+
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
+    <!-- Custom CSS -->
+    <link href="common/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="common/dist/css/style.min.css" rel="stylesheet">
+    <link href="common/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
+    <link href="common/assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    <!-- datatable CSS -->
+    <link rel="stylesheet" type="text/css" href="common/assets/extra-libs/multicheck/multicheck.css">
+    <link href="common/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="common/dist/css/datepicker3.css" />
+    <!-- loading CSS -->
+    <link rel="stylesheet" type="text/css" href="common/css/loading.css" />
+
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="common/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="common/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="common/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="common/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="common/assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="common/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="common/assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+    <!--Wave Effects -->
+    <script src="common/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <!--<script src="common/dist/js/sidebarmenu.js"></script>-->
+    <script src="common/js/sidebar-menu.js"></script>
+
+    <!--Custom JavaScript -->
+    <script src="common/dist/js/custom.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- Charts js Files -->
+    <script src="common/assets/libs/flot/excanvas.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="common/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="common/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="common/dist/js/pages/chart/chart-page-init.js"></script>
+
+    <script src="common/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!--datatable js-->
+    <script src="common/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="common/assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script type="text/javascript" src="common/js/jquery.tablednd.js"></script>
+    <script type="text/javascript" src="common/dist/js/jquery-sortable.js"></script>
+
+    <script type="text/javascript" src="common/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="common/js/bootstrap-datepicker.kr.js"></script>
+    <!--paging-->
+    <script src="common/js/paging-count-check.js"></script>
+    <!--comment-->
+    <script src="common/js/comment.js"></script>
+    <!---summernote js/css-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+    <!-- dwr common -->
+    <script type='text/javascript' src='/dwr/interface/selectboxService.js'></script>
+
+    <!-- loading -->
+    <script src="common/js/loading.js"></script>
+    <!--<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>-->
+
+    <!--daum map api-->
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+</head>
+<title>지안에듀관리자</title>
+<body onload="init();">
+<!--헤더-->
+
+
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+<div id="main-wrapper">
+    <header class="topbar" data-navbarbg="skin5">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <div class="navbar-header" data-logobg="skin5">
+                <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                <a class="navbar-brand" href="javascript:goPage('dashboard','dashboard');" attr-a="onclick: attr-a">
+                    <img src="img/logo.png" alt="user" class="rounded-circle" width="31">
+                    <span class="logo-text">
+                        지안에듀
+                    </span>
+                </a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                <ul class="navbar-nav float-left mr-auto"></ul>
+                <ul class="navbar-nav float-right">
+                    <li class="nav-item">
+                        <span class=" nav-link text-muted waves-effect waves-dark pro-pic">지안에듀</span>
+                        <button type="button" class="btn btn-outline-secondary" onclick="goPage('login', 'logout')"><i class="fa fa-power-off m-r-5 m-l-5"></i>  로그아웃</button>
+                        <button type="button" class="btn btn-outline-warning">사이트이동</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+<!-- form 시작-->
+<form name="frm" method="get" id="frm">
+<input type="hidden" name="page_gbn" id="page_gbn">
+<input type="hidden" name="param_key" id="param_key">
+<input type="hidden" id="type" name="type" value=""><!--주문관리 : 페이지 왼쪽메뉴 스타일 type-->
+</form>
+
+    <!--관리자 메뉴-->
+ 
+<!-- Left Sidebar-->
+
+
+<style>
+    hr {
+        border: 1;
+        height: 1px;
+        background-image: linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0);
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+
+</style>
+<script>
+</script>
+<aside class="left-sidebar" data-sidebarbg="skin5">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav" class="p-t-30">
+                <!--
+                  <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Forms </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Form Basic </span></a></li>
+                                <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Form Wizard </span></a></li>
+                            </ul>
+                    </li>
+                -->
+                <li class="sidebar-item" id="menu-0"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"  aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">데이터관리</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'classficationSave'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 분류/과목관리 </span></a></li>
+                        <!--<li class="sidebar-item" id="menu-0-1"><a href="#" onclick="goPage('dataManage', 'subjectSave');" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 과목관리 </span></a></li>-->
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'bannerSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">배너관리</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'sideBannerSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">사이드바배너관리</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'examplanSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 시험일정관리 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('dataManage', 'searchSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 검색어관리 </span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                    </ul>
+                </li>
+                <li class="sidebar-item"  id="menu-1"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">상품관리</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <!--<li class="sidebar-item" ><a href="#" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 동영상상품관리 </span></a></li>-->
+                        <li class="sidebar-item"  id="menu-1-0"><a href="http://localhost:8080/productManage?page_gbn=playList" onclick="goPage('productManage', 'playList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 동영상 목록 </span></a></li>
+                        <li class="sidebar-item" id="menu-1-1"><a href="http://localhost:8080/productManage?page_gbn=playSave" onclick="goPage('productManage', 'playSave'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 동영상 등록 </span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <!--<li class="sidebar-item"><a href="#" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 학원강의 상품관리 </span></a></li>-->
+                        <li class="sidebar-item" id="menu-1-2"><a href="#" onclick="goPage('productManage', 'academyLectureList')" class="sidebar-link"><i class=""></i><span class="hide-menu">학원강의 목록</span></a></li>
+                        <li class="sidebar-item" id="menu-1-3"><a href="#" onclick="goPage('productManage', 'academyLectureSave')" class="sidebar-link"><i class=""></i><span class="hide-menu">학원강의 등록</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <!--<li class="sidebar-item"><a href="void(0)" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 도서관리 </span></a></li>-->
+                        <li class="sidebar-item" id="menu-1-4"><a href="void(0)" onclick="goPage('productManage', 'bookList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 도서목록 </span></a></li>
+                        <li class="sidebar-item" id="menu-1-5"><a href="void(0)" onclick="goPage('productManage', 'bookSave'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 도서등록 </span></a></li>
+                        <!--<li class="sidebar-item"><a href="void(0)" class="sidebar-link"><i class="fas fa-minus"></i><span class="hide-menu"> 모의고사관리 </span></a></li>-->
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'mokExamList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'mokExamManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사등록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'mokProductList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사상품 목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'mokProductManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사상품 등록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'mokProblemBankList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사 문제은행 문제목록</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'mokProblemBankManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사 문제은행 문제등록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'mokProblemSubjectBankList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu"> 모의고사 문제은행 과목목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('productManage', 'mokProblemSubjectBankManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">모의고사 문제은행 과목등록</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                    </ul>
+                </li>
+                <li class="sidebar-item" id="menu-2"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"  aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">프로모션상품관리</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('promotionManage', 'packageList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 패키지목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('promotionManage', 'packageManage'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 패키지상품 등록 </span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('promotionManage', 'zianPassList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">지안패스 목록</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('promotionManage', 'zianPassManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">지안패스 등록</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <!--<li class="sidebar-item"><a href="void(0)" class="sidebar-link"><i class=""></i><span class="hide-menu">연간회원제 페이지 목록</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" class="sidebar-link"><i class=""></i><span class="hide-menu">연간회원제 페이지 등록</span></a></li>-->
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('promotionManage', 'yearMemberList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">연간회원제 목록</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('promotionManage', 'yearMemberManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">연간회원제 등록</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                    </ul>
+                </li>
+                <li class="sidebar-item" id="menu-3"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"  aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">주문관리</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'orderList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 전체주문목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'playOrderList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 동영상주문목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'rePlayOrderList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 동영상주문목록(재수강) </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'academyLectureOrderList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 학원강의주문목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'bookOrderList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 도서주문목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'promotionOrderList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 프로모션주문목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'cancelOrderList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 주문,결제취소목록 </span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'lectureWatchList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">수강내역목록</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'academyLectureManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">학원수강입력</span></a></li>
+                        <!--<li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'academyLectureDetailList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">학원수강관리</span></a></li>-->
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'freeLectureManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">무료수강관리</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'deviceListManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">상품/모바일 디바이스관리</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'deviceChangeList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">기기변경 이력조회</span></a></li>
+                        <!--<li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'yearMemberList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">오프라인 응시자 목록</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'yearMemberManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">성적내역</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'yearMemberManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">OMR</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >-->
+                        <!--<li class="sidebar-item"><a href="void(0)" onclick="goPage('orderManage', 'yearMemberManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">마일리지관리</span></a></li>-->
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                    </ul>
+                </li>
+                <li class="sidebar-item" id="menu-4"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"  aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">팝업관리</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('popupCouponManage', 'popupList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 팝업목록</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('popupCouponManage', 'popupManage'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 팝업등록</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                    </ul>
+                </li>
+                <li class="sidebar-item" id="menu-5"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"  aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">회원관리</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('memberManage', 'memberList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 회원 목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('memberManage', 'memeberSecessionList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 탈퇴 / 신청 목록 </span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('memberManage', 'counselList'); return false;" class="sidebar-link" style="padding: 10px 19px;"><i class=""></i><span class="hide-menu"> 상담내역 </span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('memberManage', 'teacherList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">강사 목록</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('memberManage', 'teacherManage'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">강사 등록</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('memberManage', 'sendSms'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">SMS 보내기</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('memberManage', 'smsSendList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">SMS 발송내역</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                    </ul>
+                </li>
+                <li class="sidebar-item" id="menu-6"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">통계</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('statisManage', 'productStatistics'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">상품통계</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('statisManage', 'promotionStatistics'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">프로모션 통계</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('statisManage', 'memberStatistics'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">회원가입 통계</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                    </ul>
+                </li>
+                <li class="sidebar-item" id="menu-7"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">교수</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('teacherManage', 'teacherCalculateMonthList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">월별 정산내역</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('teacherManage', 'teacherCalculateSectionList'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">기간별 정산내역</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('teacherManage', 'teacherCalcGraph' +
+                         ''); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">매출 그래프</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('statisManage', 'promotionStatistics'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">게시글관리</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('statisManage', 'memberStatistics'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">학습자료실</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('statisManage', 'memberStatistics'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">Q&A</span></a></li>
+                        <li class="sidebar-item"><a href="void(0)" onclick="goPage('statisManage', 'memberStatistics'); return false;" class="sidebar-link"><i class=""></i><span class="hide-menu">리뷰</span></a></li>
+                        <hr style="width: 100%;color:#6c757d" noshade >
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
+<div class="page-wrapper">
+<script>
+    $.sidebarMenu($('.sidebar-item'));
+    $.sidebarSubMenu();
+</script>
+
+
+
+<script>
+    var httpCode = '200';
+    if (httpCode == '901') {
+        alert("세션이 만료되어 로그인 페이지로 이동합니다.");
+    }
+
+    function serializeDiv( $div, serialize_method ) {
+        // Accepts 'serialize', 'serializeArray'; Implicit 'serialize'
+        serialize_method = serialize_method || 'serialize';
+
+        // Unique selector for wrapper forms
+        var inner_wrapper_class = 'any_unique_class_for_wrapped_content';
+
+        // Wrap content with a form
+        $div.wrapInner( "<form class='"+inner_wrapper_class+"'></form>" );
+
+        // Serialize inputs
+        var result = $('.'+inner_wrapper_class, $div)[serialize_method]();
+
+        // Eliminate newly created form
+        $('.script_wrap_inner_div_form', $div).contents().unwrap();
+
+        // Return result
+        return result;
+    }
+</script>
+
+<style>
+    ol,ul{list-style:none}
+
+    button{margin:0;padding:0;font-family:inherit;border:0 none;background:transparent;cursor:pointer}
+    button::-moz-focus-inner{border:0;padding:0}
+    .searchDate{overflow:hidden;margin-bottom:-3px;*zoom:1;margin-left: -7%;}
+    .searchDate:after{display:block;clear:both;content:''}
+    .searchDate li{position:relative;float:left;margin:0 7px 0 0}
+    .searchDate li .chkbox2{display:block;text-align:center}
+    .searchDate li .chkbox2 input{position:absolute;z-index:-1}
+    .searchDate li .chkbox2 label{display:block;width:77px;height:26px;font-size:14px;font-weight:bold;color:#fff;text-align:center;line-height:25px;text-decoration:none;cursor:pointer;background:#02486f}
+    .searchDate li .chkbox2.on label{background:#ec6a6a}
+</style>
+<script type='text/javascript' src='/dwr/engine.js'></script>
+<script type='text/javascript' src='/dwr/interface/orderManageService.js'></script>
+<script>
+    function init() {
+        getProductSearchSelectbox("l_searchSel");
+        menuActive('menu-3', 2);
+        orderStatusTypeSelecbox('orderStatus', 2);//처리상태 - 입금예정,결제대기,결제완료
+        orderPayStatusTypeSelecbox('orderPayStatus', '');//처리상태 - 결제취소,주문취소,결제실패
+        isOfflineSelectbox('isOffline', '');
+        deviceSelectbox('deviceSel', '');
+        orderPayTypeSelectbox('orderPayTypeSel', '');
+        orderSearchSelectbox('orderSearch', 'orderUserName');
+        orderStatusTypeChangeSelecbox('orderStatusChangeSel', '');
+        listNumberSelectbox('listNumberSel', '');
+        setSearchDate('6m', 'searchStartDate', 'searchEndDate');
+        //fn_search("new");
+    }
+
+    function fn_search(val) {
+        var paging = new Paging();
+        var sPage = getInputTextValue("sPage");
+        if(searchType == null) searchType = "";
+        if (val == "new") sPage = "1";
+
+        dwr.util.removeAllRows("dataList"); //테이블 리스트 초기화
+        gfn_emptyView("H", "");//페이징 예외사항처리
+
+        var payStatus = getSelectboxValue("orderStatus");//처리상태
+        var isOffline = getSelectboxValue("isOffline");//구매장소
+        var isMobile = getSelectboxValue("deviceSel");//디바이스
+        var payType = getSelectboxValue("orderPayTypeSel");//결제방법
+        var searchType = getSelectboxValue("orderSearch");//검색타입
+        var orderStatusChangeSel = getSelectboxValue("orderStatusChangeSel");//결제상태변경
+        var listNumberSel = getSelectboxValue("listNumberSel");//리스트개수
+        var startSearchDate = getInputTextValue('searchStartDate');
+        var endSearchDate = getInputTextValue('searchEndDate');
+        var searchText = getInputTextValue('searchText');
+
+        var goodsType = 'VIDEO';
+        var isVideoReply = 0;
+
+        var loading = new Loading({
+            direction: 'hor',
+            discription: '검색중',
+            animationIn: false,
+            animationOut: false,
+            defaultApply: 	true,
+        });
+
+        orderManageService.getOrderListCount(startSearchDate, endSearchDate, goodsType, payStatus, isOffline,
+            payType, isMobile, searchType, searchText, isVideoReply, function (cnt) {
+                paging.count(sPage, cnt, '10', '10', comment.blank_list);
+                var listNum = ((cnt-1)+1)-((sPage-1)*10); //리스트 넘버링
+                orderManageService.getOrderList(sPage, listNumberSel, startSearchDate, endSearchDate, goodsType,
+                    payStatus, isOffline, payType, isMobile, searchType, searchText, isVideoReply, function (selList) {
+
+                        if (selList.length == 0) return;
+                        dwr.util.addRows("dataList", selList, [
+                            function(data) {return "<a href='javascript:void(0);' color='blue' style='' onclick='goOrderDetail(" + data.JKey + ");'>" + data.JId + "</a>";},
+                            function(data) {return "<a href='javascript:void(0);' color='blue' style='' onclick='test(" + data.userKey + ");'>" + data.userId + "</a>";},
+                            function(data) {return data.depositUser == null ? "-" : data.depositUser;},
+                            //function(data) {return data.orderGoodsName == null ? "-" : data.orderGoodsName;},
+                            function (data) { return data.orderGoodsCount == 0 ? data.orderGoodsName : data.orderGoodsName +"<a style='color: red'>외"+data.orderGoodsCount+"</a>";},
+                            function(data) {return data.pricePay == null ? "-" : format(data.pricePay);},
+                            function(data) {return data.payTypeName == null ? "-" : data.payTypeName;},
+                            function(data) {return data.payStatusName == null ? "-" : data.payStatusName;},
+                            //function(data) {return data.isMobile == null ? "-" : data.isMobile;},
+                            function(data) {return data.isMobile == 0 ?  "<i class='mdi mdi-close' style='color: red'></i>" : "<i class='mdi mdi-check' style='color:green;'></i>";},
+                            function(data) {return data.payStatusName == null ? "-" : data.payStatusName;},
+                            function(data) {return "<input type='checkbox' name='rowChk' value='"+ data.JKey +"'>"},
+                        ], {escapeHtml:false});
+                    });
+                loadingOut(loading);bookOrderList
+            });
+    }
+
+    function changeList() {
+        fn_search('new');
+    }
+
+    function goOrderDetail(val) {
+        innerValue('type', 'playOrderList');
+        innerValue('param_key', val);
+        goPage('orderManage', 'orderDetailManage');
+    }
+
+    //결제상태변경
+    function changePayStatus() {
+        var orderStatusChangeSel = getSelectboxValue("orderStatusChangeSel");//결제상태변경
+
+        var arr =  new Array();
+        $("input[name=rowChk]:checked").each(function() {
+            var jKey = $(this).val();
+            var data = {
+                jKey : jKey,
+                payStatus : orderStatusChangeSel
+            };
+            arr.push(data);
+        });
+        if(confirm('변경하시겠습니까?')){
+            orderManageService.changePayStatus(arr , function() {
+                isReloadPage();
+            });
+        }
+    }
+</script>
+<div class="page-breadcrumb">
+    <input type="hidden" id="sPage">
+    <input type="hidden" id="JKey" name="JKey" value="">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">동영상주문 목록</h4>
+            <div class="ml-auto text-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">주문관리</li>
+                        <li class="breadcrumb-item active" aria-current="page">동영상주문 목록</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 기본 소스-->
+<div class="">
+    <div class="form-group">
+        <div class="card" style="margin-top: 20px"><!--0-->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group row">
+                            <label  class="col-sm-1 control-label col-form-label" style="margin-bottom: 0">기간별조회</label>
+                            <div class="col-sm-5 pl-0 pr-0">
+                                <tr>
+                                    <td>
+                                        <ul class="searchDate">
+                                            <li>
+                                                <span class="chkbox2">
+                                                    <input type="radio" name="dateType" id="dateType1" onclick="setSearchDate('0d', 'searchStartDate', 'searchEndDate')"/>
+                                                    <label for="dateType1">당일</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chkbox2">
+                                                    <input type="radio" name="dateType" id="dateType3" onclick="setSearchDate('1w', 'searchStartDate', 'searchEndDate')"/>
+                                                    <label for="dateType3">1주</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chkbox2">
+                                                    <input type="radio" name="dateType" id="dateType4" onclick="setSearchDate('2w', 'searchStartDate', 'searchEndDate')"/>
+                                                    <label for="dateType4">2주</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chkbox2">
+                                                    <input type="radio" name="dateType" id="dateType5" onclick="setSearchDate('1m', 'searchStartDate', 'searchEndDate')"/>
+                                                    <label for="dateType5">1개월</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chkbox2">
+                                                    <input type="radio" name="dateType" id="dateType6" onclick="setSearchDate('3m', 'searchStartDate', 'searchEndDate')"/>
+                                                    <label for="dateType6">3개월</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chkbox2">
+                                                    <input type="radio" name="dateType" id="dateType7" onclick="setSearchDate('6m', 'searchStartDate', 'searchEndDate')"/>
+                                                    <label for="dateType7">6개월</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </div>
+                            <div class="col-sm-5 input-group pl-0 pr-0">
+                                <input type="text" class="form-control datepicker" placeholder="yyyy-mm-dd" name="searchStartDate" id="searchStartDate">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                </div>
+                                <span style="line-height: 34px;padding:0 12px"> ~ </span>
+                                <input type="text" class="form-control datepicker" placeholder="yyyy-mm-dd" name="searchEndDate" id="searchEndDate">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">처리상태</label>
+                            <div class="col-sm-8 pl-0 pr-0">
+                                <span id="orderStatus"></span>
+                                <!--<span id="orderPayStatus"></span>-->
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label  class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">결제방법</label>
+                            <div class="col-sm-8 pl-0 pr-0">
+                                <span id="orderPayTypeSel"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group row" style="">
+                            <label class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">구매장소</label>
+                            <div class="col-sm-8 pl-0 pr-0">
+                                <span id="isOffline"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label  class="col-sm-2 control-label col-form-label" style="margin-bottom: 0">디바이스</label>
+                            <div class="col-sm-8 pl-0 pr-0">
+                                <span id="deviceSel"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group row">
+                            <label class="col-sm-1 control-label col-form-label" style="margin-bottom: 0">검색어</label><!--0-->
+                            <div class="col-sm-2 pl-0 pr-0 mr-3"><!--0-->
+                                <span id="orderSearch"></span>
+                                <div style="">
+                                    <input type="text" class="form-control" id="searchText" onkeypress="if(event.keyCode==13) {fn_search('new'); return false;}">
+                                </div>
+                            </div>
+                            <div class="col-sm-2 pl-0 pr-0 mr-3"><!--0-->
+                                <select class="select2 form-control custom-select"><!--0-->
+                                    <option>선택</option>
+                                    <option value="best">BEST</option>
+                                    <option value="new">NEW</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div style=" float: right;">
+                            <button type="button" class="btn btn-outline-info mx-auto" onclick="fn_search('new')">검색</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="row"><!--0-->
+           <div class="col">
+                <div class="form-group row">
+                    <label class="col-sm-1 control-label col-form-label" style="margin-bottom:0;padding-left:30px">결제상태변경</label><!--0-->
+                    <div class="col-sm-5 pl-0 pr-0">
+                        <span id="orderStatusChangeSel"></span>
+                        <button type="button" class="btn btn-outline-info mx-auto" onclick="changePayStatus()">변경</button>
+                    </div>
+                    
+                    <label  class="col-sm-1 control-label col-form-label" style="margin-bottom: 0;padding-left:12px">리스트개수</label><!--0-->
+                    <div class="col-sm-5 pl-0 pr-0">
+                        <span id="listNumberSel"></span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //formgroup -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" width="10%">주문번호</th>
+                        <th scope="col" width="8%">ID</th>
+                        <th scope="col" width="8%">주문자</th>
+                        <th scope="col" width="30%">주문내역</th>
+                        <th scope="col" width="7%">결제금액</th>
+                        <th scope="col" width="5%">결제방법</th>
+                        <th scope="col" width="8%">진행상태</th>
+                        <th scope="col" width="8%">모바일</th>
+                        <th scope="col" width="8%">배송상태</th>
+                        <th scope="col" width="3%"><input type="checkbox" id="allCheck" onclick="allChk(this, 'rowChk');"></th>
+                    </tr>
+                    </thead>
+                    <tbody id="dataList"></tbody>
+                    <tr>
+                        <td id="emptys" colspan='23' bgcolor="#ffffff" align='center' valign='middle' style="visibility:hidden"></td>
+                    </tr>
+                </table>
+                <div id="pages" class="tb_navi" align="center">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- // 기본소스-->
+</div>
+
+<script>
+    $("#searchStartDate , #searchEndDate").datepicker({
+        language: "kr",
+        format: "yyyy-mm-dd",
+        numberOfMonths: 2
+    });
+</script>
+<!--main wapper-->
+
+</div>
+</div>
+<!--End main-wrapper-->
+</form>
+</body>
+
+</html>
